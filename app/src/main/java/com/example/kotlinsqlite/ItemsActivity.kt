@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ItemsActivity : AppCompatActivity() {
@@ -19,5 +20,7 @@ class ItemsActivity : AppCompatActivity() {
         items.add(Item(2,"light","Свет","Бабабой","Кухня икеа",52))
         items.add(Item(3,"kitchen","Кухня","Очень большое описание","",1223123))
 
+        itemsList.layoutManager = LinearLayoutManager(this)
+        itemsList.adapter = ItemsAdapter(items,this)
     }
 }
